@@ -5,19 +5,40 @@ body {
   font-family: sans-serif;
 }
 
-.box {
-  margin: auto;
-  width: 300px;
+.wrap {
+  margin: 0 auto;
+  padding: 15px;
+  width: 850px;
   height: 300px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.box {
+  /*margin: auto;*/
+  width: 25%;
+  height: 200px;
   border-radius: 15px;
   background: steelblue;
-  transition-duration: 1s;
+  transition-property: margin,background;
+  transition-duration: 1s, .6s;
+  /*transition-timing-function: ease-in-out;*/
+  transition-timing-function: cubic-bezier(.5, -.5, .3, 1.3), ease;
+  /*Delay for margin, background*/
+  transition-delay: 0s, 1s;
+
+  /*shorthand for all the transition properties above*/
+  transition: margin 1s cubic-bezier(.5, -.5, .3, 1.3) 0s, background .6s ease 1s;
 
 }
 
-.box:hover {
+/*.box:hover {
   background: lightcoral;
   border-radius: 50%;
   transition-property: background, border-radius;
   transition-duration: .3s, 1s;
+}*/
+
+.wrap:hover .box {
+  background: #f08080;
+  margin-left: 75%;
 }
